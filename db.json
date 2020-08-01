@@ -1,0 +1,54 @@
+{
+  "students": [
+    {
+      "firstName": "Charan",
+      "lastName": "Sai",
+      "address": "1-5-112",
+      "cityName": "VISAKHAPATNAM",
+      "stateName": "Old municipality office backside",
+      "mobileNumber": 8179964228,
+      "gpa": 10,
+      "id": 1
+    },
+    {
+      "firstName": "Charan",
+      "lastName": "Sai",
+      "address": "1-5-112",
+      "cityName": "VISAKHAPATNAM",
+      "stateName": "Old municipality office backside",
+      "mobileNumber": 8179964228,
+      "gpa": 9,
+      "id": 2
+    },
+    {
+      "firstName": "Charan",
+      "lastName": "Sai",
+      "address": "1-5-112",
+      "cityName": "VISAKHAPATNAM",
+      "stateName": "Old municipality office backside",
+      "mobileNumber": 8179964228,
+      "gpa": 7,
+      "id": 3
+    },
+    {
+      "firstName": "Charan",
+      "lastName": "Sai",
+      "address": "1-5-112",
+      "cityName": "VISAKHAPATNAM",
+      "stateName": "Old municipality office backside",
+      "mobileNumber": 8179964228,
+      "gpa": 5,
+      "id": 4
+    },
+    {
+      "firstName": "Charan",
+      "lastName": "Sai",
+      "address": "1-5-112",
+      "cityName": "VISAKHAPATNAM",
+      "stateName": "Old municipality office backside",
+      "mobileNumber": 8179964228,
+      "gpa": 8,
+      "id": 5
+    }
+  ]
+}
