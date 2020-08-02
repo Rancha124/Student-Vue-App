@@ -112,7 +112,8 @@ export default {
             cityName: '',
             stateName: '',
             gpa: null,
-            submitStatus: null
+            submitStatus: null,
+            students: []
         }
     },
     validations : {
@@ -155,6 +156,7 @@ export default {
     },
     methods : {
         submitForm(e) {
+             const id = this.$route.params.id;
             e.preventDefault()
             console.log("I am here")
             this.$v.$touch()
@@ -163,6 +165,22 @@ export default {
             }
             else{
              this.submitStatus = "Success"
+            if(id){
+            axios
+              .put(`http://localhost:3000/students/${id}`, 
+               { firstName: this.firstName,
+                 lastName: this.lastName,
+                address: this.address,
+                cityName: this.cityName,
+                stateName: this.stateName,
+                mobileNumber: this.mobileNumber,
+                gpa: this.gpa
+            })
+              .then(() => console.log("edited succesfully mate"));            
+             this.$router.push("/show-data").then(()=>{location.reload()})
+             .catch(() => {});
+            }
+            else{
              axios.post(`http://localhost:3000/students`,
             { firstName: this.firstName,
             lastName: this.lastName,
@@ -172,12 +190,32 @@ export default {
             mobileNumber: this.mobileNumber,
             gpa: this.gpa
             }
-            )
-             console.log(this.firstName);
+            ).then(res => console.log(res.data))
              this.$router.push("/show-data").catch(()=>{});
+            }
+             
             }
         },
         
+    },
+    created(){
+       const id = this.$route.params.id;
+      if (id) {
+        axios.get(`http://localhost:3000/students/${id}`).then((result) => {
+          this.students = result.data;
+          this.firstName = this.students.firstName;
+          this.lastName = this.students.lastName;
+          this.address = this.students.address;
+          this.cityName = this.students.cityName;
+          this.stateName = this.students.stateName;
+          this.gpa = this.students.gpa;
+          this.mobileNumber = this.students.mobileNumber;
+          console.log("Hello", this.students.firstName);
+        });
+      }
+    },
+    mounted(){
+        this.firstName = this.students.firstName;
     }
 }
 </script>

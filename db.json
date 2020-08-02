@@ -1,54 +1,44 @@
 {
   "students": [
     {
-      "firstName": "Charan",
-      "lastName": "Sai",
-      "address": "1-5-112",
-      "cityName": "VISAKHAPATNAM",
-      "stateName": "Old municipality office backside",
-      "mobileNumber": 8179964228,
-      "gpa": 10,
+      "firstName": "Kumar",
+      "lastName": "Verma",
+      "address": "Plot-EE",
+      "cityName": "Shamshabad",
+      "stateName": "Kolkata",
+      "mobileNumber": 78945689,
+      "gpa": 8,
       "id": 1
     },
     {
-      "firstName": "Charan",
-      "lastName": "Sai",
-      "address": "1-5-112",
-      "cityName": "VISAKHAPATNAM",
-      "stateName": "Old municipality office backside",
-      "mobileNumber": 8179964228,
-      "gpa": 9,
-      "id": 2
-    },
-    {
-      "firstName": "Charan",
-      "lastName": "Sai",
-      "address": "1-5-112",
-      "cityName": "VISAKHAPATNAM",
-      "stateName": "Old municipality office backside",
-      "mobileNumber": 8179964228,
+      "firstName": "Jagadeesh",
+      "lastName": "Kumar",
+      "address": "Plot-EE",
+      "cityName": "Tenali",
+      "stateName": "Manipur",
+      "mobileNumber": 789798979,
       "gpa": 7,
-      "id": 3
+      "id": 7
     },
     {
-      "firstName": "Charan",
-      "lastName": "Sai",
-      "address": "1-5-112",
-      "cityName": "VISAKHAPATNAM",
-      "stateName": "Old municipality office backside",
-      "mobileNumber": 8179964228,
+      "firstName": "Zaswanth",
+      "lastName": "Kiarra",
+      "address": "Plot-125",
+      "cityName": "Hyderabad",
+      "stateName": "Telangana",
+      "mobileNumber": 869745887,
       "gpa": 5,
-      "id": 4
+      "id": 9
     },
     {
-      "firstName": "Charan",
-      "lastName": "Sai",
-      "address": "1-5-112",
-      "cityName": "VISAKHAPATNAM",
-      "stateName": "Old municipality office backside",
-      "mobileNumber": 8179964228,
-      "gpa": 8,
-      "id": 5
+      "firstName": "Gajendra",
+      "lastName": "Moksha",
+      "address": "Plot-RE",
+      "cityName": "Bankok",
+      "stateName": "Thailand",
+      "mobileNumber": 967845874,
+      "gpa": 6,
+      "id": 10
     }
   ]
 }
