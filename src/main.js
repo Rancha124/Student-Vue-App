@@ -11,6 +11,7 @@ import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import {store} from './store'
 Vue.use(VueMaterial)
 Vue.use(Vuerouter)
 Vue.use(Vuelidate)
@@ -25,6 +26,6 @@ mode: 'history'})
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',router,
+  el: '#app',router,store: store,
   render: h => h(App),
 });

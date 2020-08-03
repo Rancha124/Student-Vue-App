@@ -1,5 +1,5 @@
 <template >
-    <div :key="componentKey">
+    <div  >
         <h1>Hello there I am ShowData</h1>
         <div>
     <md-table v-model="students">
@@ -19,7 +19,7 @@
         <md-table-head>Delete Data</md-table-head>
       </md-table-row>
 
-      <md-table-row v-for="(student,index) in students" v-bind:key="student.id" >
+      <md-table-row  v-for="(student,index) in students" v-bind:key="student.id" >
         <md-table-cell md-numeric>{{index+1}}</md-table-cell>
         <md-table-cell>{{student.firstName}}</md-table-cell>
         <md-table-cell>{{student.lastName}}</md-table-cell>
@@ -33,7 +33,7 @@
                             paddingTop: 5px;  cursor: pointer" ></i></div></md-table-cell>
       </md-table-row>
 
-      
+    
 
       
       
@@ -44,23 +44,24 @@
 </template>
 <script>
 import axios from 'axios'
+
 export default {
     name: "ShowData",
-    data: () => {
-        return {
-           students: [],
-           componentKey: 0,
-        }
+    computed: {
+    students(){
+      console.log("on the way to students")
+      const array = this.$store.getters.getStudentsData
+      console.log(array)
+      return this.$store.getters.getStudentsData;
+    },
     },
     methods: {
-        fullDetails(index){
-            const id = this.students[index].id;
-            console.log("Clicked Full details id is",id);
-    axios
-      .get(`http://localhost:3000/students/${id}`)
-      .then(this.$router.push(`/full-details/${id}`).catch(()=>{}));
-           
-        },
+      dummyD(){
+        console.log("I am in dummy")
+        this.$store.commit('changeData')
+      },
+      
+       
         editData: function (index){
             const id = this.students[index].id;
             console.log("in edit data");
@@ -70,26 +71,39 @@ export default {
       this.$router.push(`/edit-data/${id}`).catch(()=>{});
 
         },
+         fullDetails(index){
+            const id = this.students[index].id;
+            console.log("Clicked Full details id is",id);
+    axios
+      .get(`http://localhost:3000/students/${id}`)
+      .then(this.$router.push(`/full-details/${id}`).catch(()=>{}));
+           
+        },
         deleteData: function (index)  {
             console.log("in delete");
             const id = this.students[index].id; 
             axios.delete(`http://localhost:3000/students/${id}`)
             .then(res =>  
-            {console.log(res);
-            axios.get('http://localhost:3000/students').then(res  => this.students = res.data) }    )    
-        },
-    forceRerender() {
-      this.componentKey += 1;
-    }
+            {console.log("Check me out",res);
+            axios.get('http://localhost:3000/students').then(res  =>  {
+              console.log(res.data)
+              this.$store.commit('deleteStudentsData',res.data)}
+) }    )    
+        }
+   
   
 
     },
     created(){
+      
         axios.get(`http://localhost:3000/students`)
         .then(res => {
-            this.students = res.data
+            this.$store.commit('addStudentsData',res.data)
+            
             }
         )
+        console.log("I am in created")
+        
     }
 
 }
